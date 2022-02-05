@@ -2,11 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import ReduxThunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+
+import uiReducer from './store/reducers/ui';
+import audioReducer from './store/reducers/audio';
+import songReducer from './store/reducers/song';
+
 import reportWebVitals from './reportWebVitals';
+import Amplify from 'aws-amplify';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+const rootReducer = combineReducers({
+  ui: uiReducer,
+  audio: audioReducer,
+  song: songReducer,
+});
+
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(ReduxThunk))
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

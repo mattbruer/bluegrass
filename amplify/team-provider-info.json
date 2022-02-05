@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bluegrass-dev-120639-authRole",
+      "UnauthRoleArn": "arn:aws:iam::698579142376:role/amplify-bluegrass-dev-120639-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::698579142376:role/amplify-bluegrass-dev-120639-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bluegrass-dev-120639-deployment",
+      "UnauthRoleName": "amplify-bluegrass-dev-120639-unauthRole",
+      "StackName": "amplify-bluegrass-dev-120639",
+      "StackId": "arn:aws:cloudformation:us-east-2:698579142376:stack/amplify-bluegrass-dev-120639/b73ca680-7ed2-11ec-9325-0204565fa5fe",
+      "AmplifyAppId": "d1sjdpyp54nrsu"
+    },
+    "categories": {
+      "auth": {
+        "bluegrass7137202a": {}
+      }
+    }
+  }
+}
